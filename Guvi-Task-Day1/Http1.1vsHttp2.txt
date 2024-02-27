@@ -1,0 +1,13 @@
+HTTP - HyperTextTranserProtocol
+
+HTTP/1.1:
+	Introduced during the year 1997
+	Loads the requested contents one after the other
+	its disadvantage is when any content has issues, the remaining content does not loads
+	
+HTTP/2	:
+	Introduced during the year 2015
+	Developers finds the drawbacks in HTTP/1.1 and found some solutions.
+	Its Much Faster and More efficient than HTTP/1.1,
+	Multiple contents loaded at a time, so if any issue in a content does not affects the other.
+	Used Advanced compression method to compress messages to save some extra bytes

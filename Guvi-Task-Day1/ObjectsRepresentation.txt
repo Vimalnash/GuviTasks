@@ -1,0 +1,21 @@
+Javascript Objects:
+	*	Javascript object is one of the datatypes where the data is stored in a variable in a format of key:value pairs
+	*	Main Advantage is that, instead of assigning more variables to store different content related to any kind(e.g contact details), here in single object more keys:value pairs can be set.
+	(e.g) Name:Rakesh, Age:31, fav_food:["biriyani", "dosa"]
+	*	For object variables, Key:value pairs are mentioned in curly braces {}. Key name should not duplicate, but value assigned can be of any value and any datatypes like string, numbers, float, boolean, list, subobject.
+	Syntax:
+		const ObjectVariableName = {
+			Key1	:	string,
+			Key2	:	number,
+			Key3	:	float,
+			Key4	:	boolean,
+			Key5	:	[]
+		}
+	
+	e.g :
+		const ObjectVariableName = {
+			Name	:	"Bright",
+			Age		:	30,
+			Married	:	true,
+			fav_food:	["biriyani", "dosa"]
+		}
