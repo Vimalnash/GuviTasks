@@ -1,0 +1,26 @@
+Document Object:
+	Document Object is the HTML document that appears in the browser window.
+	It is an interface for interacting with web page contents.
+	DOM is a logical tree in a document, with methods allowing access to change its structure, style, or content.
+	some of the properties and methods are,
+	Properties :
+		variableName.innerHTML = Normal content or HTML Contents
+		variableName.attribute = input new value to change the content
+	methods :
+		document.getElementById("idname"),
+		document.createElement(element)
+	
+	
+Window Object :
+	The Window Object is a global object in client side JavaScript.
+	It represents the browser window containing DOM document
+	It is responsible for managing global variables, functions, arrays and objects
+	some of the properties and methods are,
+	Properties :
+		window.innerHeight
+		window.innerWidth
+	Methods :
+		window.open(),
+		window.close(),
+		window.moveTo(),
+		window.resizeTo()
