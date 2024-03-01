@@ -10,6 +10,28 @@ let obj2 = {
     name : "Person 1"
 }
 
+// //Method 3: Success 
+    // // (Searched google to find length of object and how to loop an object) then wrote the code myself to compare
+let obj1length = Object.keys(obj1).length;	// console.log(obj1length)
+let obj2length = Object.keys(obj2).length;	// console.log(obj2length)
+
+let jsondiff = 0;
+if (obj1length == obj2length) {		// console.log("equal") // Checked whether condition succeeded    
+    for (key in obj1) {				// console.log(key);    // Checked whether getting the key name        
+        if (obj2[key]) {			// console.log("keyequal", obj2[key])
+            jsondiff += 1 ;
+        }
+    }
+}
+
+if (jsondiff == obj1length){
+    console.log("Two JSONs have same properties");
+} else {
+    console.log("Two JSONs have some different properties")
+}
+
+
+
 // // Tried Method 1
     // // Directly compare the objects
 
@@ -27,28 +49,3 @@ let obj2 = {
     // // console.log(typeof obj2str);
 
     // console.log(obj1str == obj2str); //false
-
-// //Method 3: Success 
-    // // (Searched google to find length of object and how to loop an object) then wrote the code myself to compare
-let obj1length = Object.keys(obj1).length;
-// console.log(obj1length)
-let obj2length = Object.keys(obj2).length; 
-// console.log(obj2length)
-
-let jsondiff = 0;
-if (obj1length == obj2length) {
-    // console.log("equal") // Checked whether condition succeeded
-    for (key in obj1) {
-        // console.log(key);    // Checked whether getting the key name
-        if (obj2[key]) {
-            // console.log("keyequal", obj2[key])
-            jsondiff += 1 ;
-        }
-    }
-}
-
-if (jsondiff == obj1length){
-    console.log("Two JSONs have same properties");
-} else {
-    console.log("Two JSONs have some different properties")
-}
