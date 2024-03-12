@@ -48,12 +48,10 @@ xhr.onload = function () {
     console.log("-----Q-e-Print the country that uses US dollars as currency.");
     console.log("------Countries Using US Dollars------");
 
-    for (let i=0; i<data.length; i++) {
-        if (!data[i].currencies) {
-            continue;
-        }
-        if (data[i].currencies["USD"] ) {
-            console.log(data[i].name.common);
-        }
-    }
+    data
+        .filter((val) => val.currencies)        // Filtering which have Currencies key or else error occurred
+        .filter((val) => val.currencies.USD)
+        .map((val) => {
+            console.log(val.name.common)
+        });
 }
