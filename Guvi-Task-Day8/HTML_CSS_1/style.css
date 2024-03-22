@@ -1,0 +1,113 @@
+* {
+    margin:0;
+    padding:0;
+    background-color: rgb(200, 200, 200);
+}
+h2 {
+    background-color: rgb(161, 88, 88);
+    color: whitesmoke;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 10vh 90vh;
+}
+
+.header {
+    display:grid;
+    grid-template-columns: 5vw 95vw;
+    background-color: rgb(66, 66, 66);
+    color:aliceblue;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.header .headericon {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(66, 66, 66);
+}
+
+.headercontent {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(66, 66, 66);
+}
+
+.maincontent {
+    display:grid;
+    grid-template-columns: 25vw 75vw;
+    grid-template-rows: auto;
+}
+
+.sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(66, 66, 66);
+    color:aliceblue;
+    margin:20px;
+    border-radius: 15px;
+}
+
+aside {
+    background-color: rgb(66, 66, 66);
+}
+
+.mainsection {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 20;
+    margin:20px;
+    border-radius: 10px;
+}
+.mainsection div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20;
+    background-color: #424242;
+    color:aliceblue;
+    margin: 10px;
+    border-radius: 15px;
+    width: 250px;
+    height:200px;
+}
+
+.mainsection .mainsearch {
+    background-color: rgb(200, 200, 200);
+    height: 30px;
+    border-radius: 15px;
+    flex-basis: 100%;
+}
+.mainsection .mainsearch input {
+    width: 80%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgb(66, 66, 66);
+    color:aliceblue;
+
+}
+.article {
+    flex-basis: 100%;
+}
+
+article {
+    background-color: rgb(66, 66, 66);
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        grid-template-rows: 5vh 95vh;
+    }
+    .maincontent {
+        grid-template-columns: 100vw;
+        grid-template-rows: 25vh 75vh;
+    }
+    .mainsection {
+        justify-content: center;
+    }
+}
