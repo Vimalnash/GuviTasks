@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML_CSS_Task_2</title>
+    <link rel="stylesheet" href=".\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- <h2>HTML_CSS_Task_2</h2> -->
+    <div class="container">
+    <form>
+    <h2>Survey Form</h2>
+    <br/>
+    <div class="personDet">
+        <h4>Name<span class="required">*</span></h4>
+        <input required type="text" name="firstname" placeholder="FirstName" /> 
+        <input required type="text" name="lastname" placeholder="LastName" /> 
+        <br/>
+        <br/>
+        <h4>Email<span class="required">*</span></h4>
+        <input required type="email" name="email" placeholder="" class="inpEmail"/>
+        <br/>
+    </div>
+    <br/>
+
+    <div>
+        <h4>Your Experience<span class="required">*</span></h4>  
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <br/>
+        <br/>
+        <p>Overall, how would you rate your experience with us?</p>
+        <br/>
+        <br/>
+    </div>
+    
+    <div>
+        <fieldset>
+            <legend><h4>How satisfied are you with<span class="required">*</span></h4></legend>
+            <div id="satisfied">
+                <div>
+                    <div></div>
+                    <div>Very UnSatisfied</div>
+                    <div>UnSatisfied</div>
+                    <div>Neutral</div>
+                    <div>Satisfied</div>
+                    <div>Very Satisfied</div>
+                </div>
+
+                <div class="bg-grey">
+                    <div>Purchase</div>
+                    <div><input type="radio" name="purchase"></div>
+                    <div><input type="radio" name="purchase"></div>
+                    <div><input type="radio" name="purchase"></div>
+                    <div><input type="radio" name="purchase"></div>
+                    <div><input type="radio" name="purchase"></div>
+                </div>
+
+                <div>
+                    <div>Service</div>
+                    <div><input type="radio" name="service"></div>
+                    <div><input type="radio" name="service"></div>
+                    <div><input type="radio" name="service"></div>
+                    <div><input type="radio" name="service"></div>
+                    <div><input type="radio" name="service"></div>
+                </div>
+
+                <div class="bg-grey">
+                    <div>Company Overall</div>
+                    <div><input type="radio" name="companyOverall"></div>
+                    <div><input type="radio" name="companyOverall"></div>
+                    <div><input type="radio" name="companyOverall"></div>
+                    <div><input type="radio" name="companyOverall"></div>
+                    <div><input type="radio" name="companyOverall"></div>
+                </div>
+            </div>
+        </fieldset>
+        <br/>
+        <br/>
+
+        <fieldset>
+            <legend><h4>How likely are you to<span class="required">*</span></h4></legend>
+            <div id="likely">
+                <div>
+                    <div></div>
+                    <div>Very Unlikely</div>
+                    <div>Unlikely</div>
+                    <div>Neutral</div>
+                    <div>Likely</div>
+                    <div>Very Likely</div>
+                </div>
+                <div class="bg-grey">
+                    <div>Buy from us again</div>
+                    <div><input type="radio"  name="buyagain"></div>
+                    <div><input type="radio"  name="buyagain"></div>
+                    <div><input type="radio"  name="buyagain"></div>
+                    <div><input type="radio"  name="buyagain"></div>
+                    <div><input type="radio"  name="buyagain"></div>
+                </div>
+                <div>
+                    <div>Recommend our product to others</div>
+                    <div><input type="radio"  name="recommendproduct"></div>
+                    <div><input type="radio"  name="recommendproduct"></div>
+                    <div><input type="radio"  name="recommendproduct"></div>
+                    <div><input type="radio"  name="recommendproduct"></div>
+                    <div><input type="radio"  name="recommendproduct"></div>
+                </div>
+                <div class="bg-grey">
+                    <div>Recommend our company to others</div>
+                    <div><input type="radio"  name="recommendcompany"></div>
+                    <div><input type="radio"  name="recommendcompany"></div>
+                    <div><input type="radio"  name="recommendcompany"></div>
+                    <div><input type="radio"  name="recommendcompany"></div>
+                    <div><input type="radio"  name="recommendcompany"></div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <br/>
+    <div class="submit">
+        <h4>Additional Comments or Suggesstions</h4>
+        <textarea name="addcomments" id="addcomments"></textarea><br/><br/>
+        <button id="submit" type="submit">Submit</button>
+    </div>
+    </form> 
+    </div>
+</body>
+</html>
