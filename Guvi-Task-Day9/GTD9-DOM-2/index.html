@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskDay9-2-DOM Manipulation with Forms</title>
+    <link rel="stylesheet" href=".\style.css">
+</head>
+<body>
+    <h1 id="title" style="text-align: center;">TaskDay9-2 - DOM Manipulation with Forms</h1>
+    <p id="description" style="text-align: center;">Using DOM Manipulation with Forms, fetch the form datas and show in table</p>
+    <div id="container">
+    <form id="form">
+        <div class="form-group">
+            <div>
+                <label><span class="required">*</span>FirstName :</label>
+                <input id="first-name" required type="text" placeholder="First Name" >
+            </div>
+            <div>
+                <label><span class="required">*</span>LastName : </label>
+                <input id="last-name" required type="text" placeholder="Last Name">
+            </div>
+            <div>
+                <div><span class="required">*</span>Address : </div>
+                <textarea id="address" required rows="7" cols="30" placeholder="Enter Address"></textarea>
+            </div>
+            <div>
+                <label><span class="required">*</span>Pincode : </label>
+                <input id="pincode" required type="text" placeholder="Pincode">
+            </div>
+        </div>
+
+        <div>
+            <label><span class="required">*</span>Gender : </label> 
+            <input required type="radio" name="gender" value="Male" class="gender">Male
+            <input required type="radio" name="gender" value="Female" class="gender">Female
+            <input required type="radio" name="gender" value="Others" class="gender">Others
+        </div>
+        <div>
+            <label><span class="required">*</span>Select any Two Fav Food : </label> <br>
+            <input  type="checkbox" name="favfood" value="Food1" class="favfood">Food1 <br>
+            <input  type="checkbox" name="favfood" value="Food2" class="favfood">Food2 <br>
+            <input  type="checkbox" name="favfood" value="Food3" class="favfood">Food3 <br>
+            <input  type="checkbox" name="favfood" value="Food4" class="favfood">Food4 <br>
+            <input  type="checkbox" name="favfood" value="Food5" class="favfood">Food5 <br>
+        </div>
+
+        <div>
+            <label><span class="required">*</span>State : </label>
+            <select required name="state" class="countrystate">
+                <option default></option>
+                <option>Arunachal Pradesh</option>
+                <option>Andhra Pradesh</option>
+                <option>Assam</option>
+                <option>Bihar</option>
+                <option>Chhattisgarh</option>
+                <option>Goa</option>
+                <option>Gujarat</option>
+                <option>Haryana</option>
+                <option>Himachal Pradesh</option>
+                <option>Jharkhand</option>
+                <option>Karnataka</option>
+                <option>Kerala</option>
+                <option>Madhya Pradesh</option>
+                <option>Maharashtra</option>
+                <option>Manipur</option>
+                <option>Meghalaya</option>
+                <option>Mizoram</option>
+                <option>Nagaland</option>
+                <option>Odisha</option>
+                <option>Punjab</option>
+                <option>Rajasthan</option>
+                <option>Sikkim</option>
+                <option>Tamil Nadu</option>
+                <option>Telangana</option>
+                <option>Tripura</option>
+                <option>Uttar Pradesh</option>
+                <option>Uttarakhand</option>
+                <option>West Bengal</option>
+            </select>
+            <br> <br>
+            <div>
+                <label><span class="required">*</span>Country : </label>
+                <select required name="country" class="country">
+                    <option default></option>
+                    <option>India</option>
+                </select>
+            </div>
+
+        </div>
+        <button id="submit" class="btn btn-primary" type="submit">Submit</button>
+        <span class="required">* => Compulsory Required</span>
+    </form>
+
+    <div>
+        <table class="table" width="100%">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Pincode</th>
+                    <th>Gender</th>
+                    <th>Food</th>
+                    <th>State</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+</body>
+</html>

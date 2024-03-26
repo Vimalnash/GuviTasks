@@ -1,0 +1,74 @@
+/* TaskDay9-2-DOM Manipulation with Forms */
+
+#container {
+    display: grid;
+    grid-template-columns: 25vw 70vw;
+    gap: 10px;
+    margin: 5px;
+    
+}
+
+#form {
+    display: grid;
+    place-content: center;
+    gap: 15px;
+    background-color: rgb(208, 244, 246);
+    border: 1px solid rgb(109, 109, 109);
+    overflow: auto;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 10px;
+}
+
+select {
+    width: 65%;
+}
+
+.btn {
+    width: 100px;
+    padding: 10px;
+}
+
+.btn:hover {
+    background-color: rgb(14, 82, 107);
+    color: white;
+}
+
+.btn-primary {
+    background-color: rgb(84, 139, 157);
+}
+
+span.required {
+    color: red;
+}
+
+table, th, td {
+    border: 1px solid rgb(7, 45, 62);
+    border-collapse: collapse;
+}
+th {
+    background-color: rgb(173, 215, 218);
+}
+
+td {
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    #container {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 75% 25vh;
+        margin: 5px;
+    }
+    .btn {
+        width: 100%;
+    }
+
+    select, .form-group input,textarea{
+        width: 100%;
+    }
+}
