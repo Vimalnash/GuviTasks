@@ -135,24 +135,6 @@ const divPageNoCollection = document.createElement("div");
 divPageNoCollection.setAttribute("id", "pageNoCollection");
 divContainer.append(divPageNoCollection);
 
-const xhr = new XMLHttpRequest();
-xhr.open("GET", "https://raw.githubusercontent.com/Rajavasanthan/jsondata/master/pagenation.json");
-xhr.send();
-xhr.onload = function() {
-    const data = JSON.parse(xhr.response);
-    console.log(data);
-    let sum = 1;
-    for (let i=0; i<data.length; i+=5) {
-        const button = document.createElement("button");
-        button.setAttribute("class", `btn-pgNo`);
-        button.setAttribute("id", `btn-pg-${sum}`);
-        button.setAttribute("onclick", `pagination(${i}, ${i+5}, "btn-pg-${sum}")`)
-        button.innerText = sum;
-        sum++;
-        divPageNoCollection.append(button);
-    };
-}
-
 
 // Result View Creation
 
@@ -167,6 +149,19 @@ function pagination(sliceStart, sliceEnd, btnHg) {
     xhr.send();
     xhr.onload = function() {
         const dataArray = JSON.parse(xhr.response);
+
+        divPageNoCollection.innerHTML="";
+
+        let sum = 1;
+        for (let i=0; i<dataArray.length; i+=5) {
+            const button = document.createElement("button");
+            button.setAttribute("class", `btn-pgNo`);
+            button.setAttribute("id", `btn-pg-${sum}`);
+            button.setAttribute("onclick", `pagination(${i}, ${i+5}, "btn-pg-${sum}")`)
+            button.innerText = sum;
+            sum++;
+            divPageNoCollection.append(button);
+        };
 
         const pageBtn = document.querySelectorAll(".btn-pgNo");
         pageBtn.forEach(node => {
