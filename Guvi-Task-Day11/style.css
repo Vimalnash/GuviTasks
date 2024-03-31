@@ -1,0 +1,57 @@
+/* TaskDay-11-RestCountries & Weather using Fetch API */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    row-gap: 2rem;
+}
+
+.card {
+    text-align: center;
+    font-size:large;
+    background: radial-gradient(circle, rgb(250, 250, 250), rgb(220, 220, 220) );
+    box-shadow: 0 0 0.5rem rgb(122, 122, 122);
+}
+
+.card-header {
+    font-size:inherit;
+    font-weight: bold;
+    background: radial-gradient(circle, rgb(255, 255, 255), rgb(180, 180, 180) );
+
+}
+
+.card-img-top{
+    width: 100%;
+    height: 10rem;
+    padding: 0.1rem;
+}
+
+.card-text  {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding:0.3rem;
+
+}
+
+.card-text span.cardTextName{
+    text-align: right;
+    font-weight:600;
+}
+
+.card-text span.cardTextValue{
+    Padding-left: 10px;
+    text-align: left;
+}
+
+.weatherData {
+    background: radial-gradient(circle, rgb(222, 236, 239), rgb(202, 215, 220), rgb(209, 209, 209) );
+    border-radius: 10px;
+    color: rgb(24, 8, 104);
+
+}
+
+h2 {
+    text-align: center;
+}
