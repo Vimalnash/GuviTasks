@@ -16,6 +16,7 @@
 }
 
 .card-header {
+    text-transform: uppercase;
     font-size:inherit;
     font-weight: bold;
     background: radial-gradient(circle, rgb(255, 255, 255), rgb(180, 180, 180) );

@@ -73,7 +73,7 @@ const weatherApiKey = "d8226b42ac59ff832e747004abb2eadc"
 
 //get country Location by country name
 function getcountryLocation(countryName) {
-    const countryApiUrl =`http://api.openweathermap.org/geo/1.0/direct?q=${countryName}&appid=${weatherApiKey}`
+    const countryApiUrl =`https://api.openweathermap.org/geo/1.0/direct?q=${countryName}&appid=${weatherApiKey}`
 
     fetch(countryApiUrl)
     .then((response) => response.json())
