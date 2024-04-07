@@ -25,6 +25,7 @@ divContainer.append(containerRow);
 
 // Get the randon Pokeman character data and its extra details
 async function getData(){
+    try {
     const randomNo = Math.floor(Math.random() * 1025)
     const resCharData = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomNo}/`, {
         method: "GET",
@@ -41,6 +42,11 @@ async function getData(){
 
     // Calling a function which loads the data to view by user
     viewData(charData, CharDataExtras);
+    }
+    catch (error) {
+        console.log(error);
+        return alert("Error", error);
+    };
 }
 
 // Creating Character details Display
