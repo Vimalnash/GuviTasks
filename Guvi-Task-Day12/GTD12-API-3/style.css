@@ -1,0 +1,143 @@
+/* Task-12-ApiFetch-3 */
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(207, 246, 207);
+}
+
+.page-header {
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
+    font-weight: 600;
+    background-color: rgb(159, 203, 159);
+}
+
+.btn {
+    padding:10px;
+    font-size: small;
+    font-weight: 600;
+    height:auto;
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgb(50, 111, 50), rgb(144, 198, 144));
+    color: rgb(216, 241, 216);
+}
+
+.fav-btn {
+    padding: 5px;
+    font-size: small;
+    font-weight: bold;
+}
+
+.input-search {
+    padding:10px;
+    font-size: medium;
+    font-weight: 600;
+    min-width:100px;
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgb(50, 111, 50), rgb(144, 198, 144));
+    color: rgb(216, 241, 216);
+}
+
+.btn:hover {
+    box-shadow: 0 0 15px green;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    place-items : center;
+    border-bottom: 1px solid green;
+}
+
+.search-container{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.result-header {
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
+    font-weight: 600;
+    background-color: rgb(73, 129, 73);
+    color: whitesmoke;
+}
+
+.result-container {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    gap:15px;
+}
+
+.card {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+    height: 350px;
+    overflow-y: auto;
+    border-radius: 10px;
+    border: 1px solid green;
+    background: linear-gradient(180deg, rgb(189, 227, 189), rgb(146, 204, 146));
+}
+
+.card-body {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 70% 20% 10%;
+    place-items: center;
+}
+
+.resultData {
+    font-size: 25px;
+}
+
+@media screen and (max-width: 1200px) {
+    .btn, .input-search {
+        padding: 10px;
+        font-size: small;
+        font-weight: bold;
+        height:auto;
+        border-radius: 15px;
+        background: linear-gradient(0deg, rgb(50, 111, 50), rgb(144, 198, 144));
+        color: rgb(216, 241, 216);
+    }
+    .page-header {
+        text-align: center;
+        padding: 10px;
+        font-size: large;
+        width: 100%;
+        font-weight: bold;
+        background-color: rgb(159, 203, 159);
+    }
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid green;
+    }
+
+    .card {
+        width: auto;
+    }
+
+    .fav-btn {
+        padding: 3px;
+    }
+}
+
+@media screen and (max-width: 654px) {
+    .card {
+        height: auto;
+        width: auto;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
