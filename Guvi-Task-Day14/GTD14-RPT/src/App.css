@@ -10,7 +10,8 @@
   align-items: center;
   width: 100%;
   background-color: rgb(241, 242, 241);
-
+  position: fixed;
+  top: 0;
 }
 
 .app-welcomebox {
@@ -23,6 +24,10 @@
 }
 
 .welcome-title {
+  display: grid;
+  grid-template-columns: auto;
+  place-content: center;
+  gap:20px;
   color: white;
 }
 
@@ -44,8 +49,13 @@
   min-height: 350px;
   border: 1px solid rgb(199, 210, 199);
   border-radius: 5px;
+  box-shadow: 0px 0px 5px inset rgb(218, 220, 218);
 }
 
+.card:hover {
+  background-color: rgb(218, 220, 218);
+  transition: 0.5s;
+}
 
 .card-header {
   width: 100%;
@@ -65,3 +75,13 @@
   min-width: 150px;
 }
 
+.btn-remove {
+  background: linear-gradient(0deg, rgb(157, 202, 188) ,rgb(209, 235, 209));
+}
+
+.cart-btn{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
