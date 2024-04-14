@@ -4,29 +4,17 @@ import './App.css';
 // returns Item Card with details to add or remove from cart
 function ItemCard({val, setCount}) {
   const [show, setShow] = useState(true);
-  function itmAddBtn(){
-    setCount((count) => count + 1);
-    setShow(!show);
-  };
-  function itmRemoveBtn(){
-    setCount((count) => count - 1);
-    setShow(!show);
-  };
+
   return (
     <div className="card">
       <div className="card-header">
-        <img src="../public/ItemImage.png" className="card-image" alt="..." />
+        <img src="" className="card-image" alt="..." />
       </div>
       <div className="card-body">
         <h3>{val}</h3>
-        <p>Item Description</p>
-        <p>Rs.500</p>
+
         <div>
-          {show ?
-          (<button className="btn" onClick={() => itmAddBtn()}>Add to Cart</button>)
-          :
-          (<button className="btn btn-remove" onClick={() => itmRemoveBtn()}>Remove from Cart</button>)
-          }
+          <button className="btn">Add to Cart</button>
         </div>
       </div>
     </div>
