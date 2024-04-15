@@ -15,7 +15,7 @@ function ItemCard({val, setCount}) {
   return (
     <div className="card">
       <div className="card-header">
-        <img src="../public/ItemImage.png" className="card-image" alt="..." />
+        <img src="../images/ItemImage.png" className="card-image" alt="..." />
       </div>
       <div className="card-body">
         <h3>{val}</h3>
