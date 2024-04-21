@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.todoform-container {
+  display: grid;
+  place-items: center;
+  padding: 10px;
+}
+
+.todoform{
+  display:grid;
+  grid-template-columns: auto;
+  place-items: center;
+  padding: 20px;
+  border: 1px solid green;
+  box-shadow: 0 0 5px inset rgb(111, 162, 111);
+  width: 50%;
+  gap: 10px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: large;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  place-content: start;
+  gap: 10px;
+  padding: 10px;
+  margin:20px auto;
+
+}
+
+.card {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto 15%;
+  border: 1px solid rgb(75, 188, 75);
+  border-radius: 5px;
+  background-color: rgb(190, 220, 190);
+  box-shadow: 0 0 5px rgb(111, 162, 111);
+  font-size: large;
+  padding:15px;
+  height: 250px;
+  overflow: auto;
+}
+
+.card-content {
+  overflow-wrap: anywhere;
+  /* word-break: break-all; */
+}
+
+.card-status {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.card-caption {
+  font-weight: bold;
+}
+.card-top {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 20px;
+}
+
+.card-main-desc {
+  display: flex;
+  flex-flow: column;
+  gap:10px;
+}
+
+.card-btn-group{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  gap:10px;
+  padding-top:5px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.btn-del{
+  background: linear-gradient(0deg, rgb(176, 107, 64), rgb(233, 179, 102));
+}
+
+.btn-del:hover{
+  box-shadow: 0 0 10px inset rgb(176, 107, 64);
+}
+
+.todo-report-header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 20px;
+  background: linear-gradient(180deg, rgb(161, 213, 152), rgb(196, 220, 196));
+}
+
+.todo-report-title {
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.todo-report-filter {
+  font-size: larger;
+  font-weight: 600;
+  text-align: center;
+}
+
+select {
+  width: 200px;
+  height: 30px;
+  background: linear-gradient(0deg, rgb(33, 146, 13), rgb(185, 211, 185));
+  font-size:15px;
+  border: none;
+  text-align: center;
+}
+
+select:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(104, 187, 104);
+  box-shadow: 0 0 10px inset rgb(100, 100, 100);
+}
+
+.status-c {
+  background: linear-gradient(0deg, rgb(46, 182, 22), rgb(147, 249, 147));
+}
+
+.status-nc {
+  background: linear-gradient(0deg, rgb(187, 64, 64), rgb(255, 167, 167));
+}
+
+@media screen and (max-width: 1024px) {
+  .card-container {
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 50% 50%;
+  }
+  .card {
+    width: 275px;
+  }
+}
