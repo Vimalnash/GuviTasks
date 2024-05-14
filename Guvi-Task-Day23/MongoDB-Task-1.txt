@@ -1,0 +1,129 @@
+MongoDatabase Queries based on product.json file
+
+
+1.	Find all the information about each products
+
+        Method 1:
+        db.product.find().toArray();
+
+        Method 2:
+        db.product.find().forEach((data) => {
+            print(
+                "[ ProductName :", data.product_name, 
+                "] , [ Price :", data.product_price,
+                "] , [ Material :", data.product_material,
+                "] , [Color :", data.product_color, "]"
+              );
+            print("");
+        });
+
+
+2.	Find the product price which are between 400 to 800
+
+        db.product.find({ 
+            product_price: {
+                $gte: 400.00, 
+                $lte: 800.00
+            } 
+        }).forEach((data) => {
+            print(
+                "[ Price :", data.product_price,
+                "] , [ ProductName :", data.product_name, 
+                "] , [ Material :", data.product_material,
+                "] , [Color :", data.product_color, "]"
+              );
+            print("");
+        });
+
+
+3.	Find the product price which are not between 400 to 600
+
+        db.product.find({ 
+            product_price: {
+                $not: {
+                    $gte:400.00, 
+                    $lte:800.00
+                } 
+            } 
+        }).forEach((data) => {
+            print(
+                "[ Price :", data.product_price,
+                "] , [ ProductName :", data.product_name, 
+                "] , [ Material :", data.product_material,
+                "] , [Color :", data.product_color, "]"
+              );
+            print("");
+        });
+
+4.	List the four product which are greater than 500 in price
+
+        db.product.find({ 
+            product_price: {
+                $gt: 500.00
+            } 
+        }).limit(4).sort({product_price : 1}).forEach((data) => {
+            print(
+                "[ Price :", data.product_price,
+                "] , [ ProductName :", data.product_name, 
+                "] , [ Material :", data.product_material,
+                "] , [Color :", data.product_color, "]"
+              );
+            print("");
+        });
+
+
+5.	Find the product name and product material of each products
+
+        db.product.find().forEach((data) => {
+            print(
+                "[ Product_Name : ", data.product_name, 
+                "], [ Product_Material : ", data.product_material, " ]"
+            );
+            print("");
+        });
+
+
+6.	Find the product with a row id of 10
+
+        db.product.find({ 
+            id: '10'
+        })
+
+
+7.	Find only the product name and product material
+
+        // Finding document with given product_name and Product_Material
+        db.product.find({ 
+            product_name: "Intelligent Fresh Chips", 
+            product_material: "Concrete" 
+        });
+
+
+8.	Find all products which contain the value of soft in product material
+
+        db.product.find({
+            product_material: { $regex: /soft/i }
+        });
+
+
+9.	Find products which contain product color indigo and product price 492.00
+
+        db.product.find({
+            $or : [
+                {product_color: /indigo/i},
+                {product_price: 492.00},
+            ]
+        });
+
+
+10.	Delete the products which product price value are 28
+
+        //Precaution before deleting, So finding documents which has product_price 28
+        db.product.find({
+            product_price: 28.00
+        });
+
+        // After Confirming from find result, delete executed
+        db.product.deleteMany({
+            product_price: 28.00
+        });
