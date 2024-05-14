@@ -98,19 +98,3 @@ CREATE TABLE Class_Task_Comments (
 	Mentor_Comments VARCHAR,
 	Marks INTEGER
 )
-
-// No Need Below for submission
-
-CREATE TABLE Stud_Perform (
-	id INTEGER PRIMARY KEY,
-	Stud_Basic_Info_id,
-	Tasks_OverAll INTEGER,
-	Tasks_Pending INTEGER,
-	Tasks_Completed INTEGER,
-)
-
-CREATE TABLE Stud_Task_Details (
-	id INTEGER PRIMARY KEY,
-	
-)
-	FeedBack_id INTEGER FOREIGN KEY,
