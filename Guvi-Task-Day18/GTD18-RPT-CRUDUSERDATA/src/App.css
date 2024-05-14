@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(255, 207, 255);
+}
+
+.pageheader {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  background-color: rgb(170, 96, 144);
+  color: rgb(254, 221, 254);
+  border-radius: 10px;
+  margin:5px;
+}
+
+.searchbar div{
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+}
+
+.searchbar div label{
+  font-size: 25px;
+}
+
+.searchbar input{
+    width: 250px;
+}
+
+.pagebody {
+  display: flex;
+  flex-flow: row;
+  gap:5px;
+  padding: 5px;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: rgb(170, 96, 144);
+  border-radius: 10px;
+  width: 15%;
+  box-sizing: border-box;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 5% auto;
+  gap: 10px;
+  padding: 10px;
+  background-color: rgb(170, 96, 144);
+  border-radius: 10px;
+  width: 85%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.content-header {
+  text-align: center;
+  font-size: 25px;
+  color: rgb(254, 221, 254);
+  border-bottom: 1px solid rgb(255, 207, 255);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 400px));
+  place-content: center;
+  gap: 15px;
+  padding: 10px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  height: 350px;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: rgb(248, 230, 248);
+  /* background-color: rgb(235, 234, 234); */
+  box-shadow: 0 0 5px darkgrey;
+  overflow: auto;
+  font-size: large;
+}
+
+.card:hover {
+  background-color: rgb(239, 216, 239);
+  transform: scale(1.07);
+}
+
+.card-top {
+  line-height: 1.2;
+}
+
+.card-top div{
+  display: grid;
+  grid-template-columns: 35% 65%;
+}
+
+.card-bottom {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap:5px;
+}
+
+.cardcaption {
+  font-weight: 600;
+  text-align: right;
+  word-wrap:break-word;
+}
+
+.cardvalue {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.btn {
+  min-width: 100px;
+  padding: 10px;
+  background: linear-gradient(0deg, rgb(180, 113, 156), rgb(226, 226, 226));
+  /* background: linear-gradient(0deg, rgb(152, 152, 152), rgb(226, 226, 226)); */
+  border: 0.5px solid gray;
+  border-radius: 10px;
+  cursor: pointer; 
+  font-size: medium;
+}
+
+.btn:hover {
+  /* background: linear-gradient(0deg, rgb(89, 89, 89), rgb(226, 226, 226)); */
+  background: linear-gradient(0deg,  rgb(103, 1, 67), rgb(249, 204, 233) );
+  color: white;
+}
+
+.btn-edit, .btn-del {
+  padding: 5px;
+}
+
+.userform, .addupdateuserform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.addupdateuserform div{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40% auto;
+  align-items: center;
+  gap: 5px;
+}
+
+.addupdateuserform div label{
+  text-align: right;
+  font-size: large;
+  color: rgb(254, 221, 254);
+  font-weight: 600;
+}
+
+.addupdateuserform div label span{
+  color: rgb(168, 4, 4);
+}
+
+input {
+  width: 350px;
+  height: 25px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+input:hover {
+  box-shadow: 0 0 10px rgb(118, 47, 94);
+  outline: 5px solid rgb(125, 19, 88);
+  transition: 0.5 s;
+}
+
+input:focus {
+  box-shadow: 0 0 10px rgb(118, 47, 94);
+  outline: 5px solid rgb(125, 19, 88);
+  transition: 0.5 s;
+}
+
+.message-success {
+  font-size: large;
+  font-weight: 600;
+  color: rgb(254, 235, 247);
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 100%));
+    padding: 0;
+    overflow: none;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  .pagebody {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .content {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 100%));
+    padding: 0;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+  }
+
+  
+}
+
+@media screen and (max-width: 640px) {
+
+  .addupdateuserform div{
+    grid-template-columns: auto;
+    place-items: start;
+  }
+
+  input {
+    width: 95%;
+  }
+}
