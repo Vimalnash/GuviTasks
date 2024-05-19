@@ -1,0 +1,260 @@
+Design database for Zen class programme
+    users
+    codekata
+    attendance
+    topics
+    tasks
+    company_drives
+    mentors
+
+1.	Find all the topics and tasks which are thought in the month of October
+2.	Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+3.	Find all the company drives and students who are appeared for the placement.
+4.	Find the number of problems solved by the user in codekata
+5.	Find all the mentors with who has the mentee's count more than 15
+6.	Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+
+
+
+
+// Answers
+
+//Design database for Zen class programme
+
+// Create/ Access Database
+    use zenclass
+
+
+//Create Collections
+    db.createCollection("users");
+    db.createCollection("codekata");
+    db.createCollection("attendance");
+    db.createCollection("topics");
+    db.createCollection("tasks");
+    db.createCollection("company_drives");
+    db.createCollection("mentors");
+
+
+//CollectionSchemaModel for each collecion, inserting a document
+
+// Attached excel sheet for insert many document for each collection
+
+// users collection document model
+    db.users.insertOne({
+        _id: 1,
+        userName:"Saravanan",
+        phone: 9894998954,
+        email: "hello@gmail.com",
+        isPayementDone: true,
+        course: "MERN",
+        batch: "FSB57WD2-T",
+        mentorId: 1
+    });
+
+// codekata collection document model
+    db.codekata.insertOne({
+        _id: 1,
+        userId: 1,
+        date: "2024-10-01",
+        problemsSolved: 5
+    });
+
+// attendance collection document model
+    db.attendance.insertOne({
+        _id: 1,
+        userId: 1,
+        date:"2020-10-01",
+        isPresent: true,
+        isTaskSubmitted: true,
+        tasks: [1, 2]
+    });
+
+// topics collection document model
+    db.topics.insertOne({
+        _id: 1,
+        date:"2020-10-01",
+        topic: "Introduction",
+    })
+
+// tasks collection document model
+    db.tasks.insertOne({
+        _id: 1,
+        date:"2020-10-01",
+        task:"Introduction"
+    });
+
+// company_drives collection document model
+    db.company_drives.insertOne({
+        _id: 1,
+        date:"2020-10-01",
+        companyName: "Paypal",
+        userId: [1]
+    });
+
+// mentors collection document model
+    db.mentors.insertOne({
+        _id: 1,
+        mentorName:"Saravanan",
+        phone: 9894998954,
+        email: "hello@gmail.com",
+        teachLanguages: ["Tamil","English"],
+    });
+
+
+
+// 1.	Find all the topics and tasks which are thought in the month of October
+        db.topics.aggregate([
+            {
+                $match: {
+                    date: {
+                        $gte: "2020-10-01",
+                        $lte: "2020-10-31"
+                    }
+                }
+            },
+            {
+                $lookup : {
+                    from: "tasks",
+                    localField: "date",
+                    foreignField: "date",
+                    as : "task"
+                },
+            },
+            {
+                $sort: {
+                    date: 1
+                }
+            }
+        ]).forEach((data) => {
+            print("Date :", data.date, ", Topic :", data.topic, ", Task :", data.task);
+        });
+
+// 2.	Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+
+        // This displays unique company names only which appeared between 15 oct-2020 and 31-oct-2020
+
+        db.company_drives.aggregate([
+            { 
+                $match: {
+                    date: {
+                        $gte: "2020-10-15",
+                        $lte: "2020-10-31"
+                    }
+                }
+            },
+            {
+                $group: {
+                    _id: "$companyName"
+                }
+            },
+            {
+                $sort: {
+                    _id: 1
+                }
+            }
+        ]).forEach((data) => {print(data._id)});  
+
+
+// 3.	Find all the company drives and students who are appeared for the placement.
+
+        db.company_drives.aggregate([
+            {
+                $lookup: {
+                    from: "users",
+                    localField: "userId",
+                    foreignField: "_id" ,
+                    as : "studentsAppeared"
+                }
+            },
+            {
+                $group: {
+                    _id: "$companyName",
+                    students: {
+                        $addToSet: "$studentsAppeared"
+                    }
+                }
+            },
+            {
+                $sort: {
+                    _id: 1
+                }
+            }
+        ]).forEach((data) => {
+            print("CompanyName :", data._id, ", Students :", data.students);
+            print("")
+        });
+
+
+// 4.	Find the number of problems solved by the user in codekata
+
+        db.codekata.aggregate([
+            {
+                $lookup: {
+                    from: "users",
+                    localField: "userId",
+                    foreignField: "_id" ,
+                    as : "user"
+                }
+            },
+            {
+                $group: { _id : "$user", problemsSolved: {$sum: "$problemsSolved"}}
+            },
+            {
+                $sort: {
+                    problemsSolved: 1
+                }
+            }
+        ]).forEach((data) => {
+            print("UserName:", data._id[0].userName, ", Batch : ", data._id[0].batch, ", ProblemsSolved :", data.problemsSolved);
+            print("")
+        });
+
+
+// 5.	Find all the mentors with who has the mentee's count more than 15
+        db.mentors.aggregate([
+            {
+                $lookup:{
+                    from: "users",
+                    localField: "_id",
+                    foreignField: "mentorId",
+                    as: "users"
+                }
+            },
+        ]).forEach((data) => {
+            if (data.users.length > 15) {
+                print("MentorName : ", data.mentorName, ",  MenteesCount : ", data.users.length)
+            }
+        });
+
+
+// 6.	Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+
+        db.attendance.aggregate([
+            {
+                $match: {
+                    date: {
+                        $gte: "2020-10-15",
+                        $lte: "2020-10-31"
+                    },
+                    isPresent: false,
+                    isTaskSubmitted: false
+                }
+            },
+            {
+                $lookup: {
+                    from: "users",
+                    localField: "userId",
+                    foreignField: "_id",
+                    as: "student"
+                }
+            },
+            {
+                $group: {_id:{isPresent: "$isPresent", userId: "$userId"}}
+            },
+            {
+                $count: "No Of Users Absent and Task Not Submitted between 15-oct-2020 and 31-oct-2020"
+            }
+        ]);
+
+
+
