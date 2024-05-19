@@ -205,6 +205,7 @@ Design database for Zen class programme
                 }
             }
         ]).forEach((data) => {
+            if (data._id[0].userName == "Saravanan3")
             print("UserName:", data._id[0].userName, ", Batch : ", data._id[0].batch, ", ProblemsSolved :", data.problemsSolved);
             print("")
         });
